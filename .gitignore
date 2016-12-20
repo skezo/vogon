@@ -1,3 +1,6 @@
 *.pyc
 *-oauth2.json
 .DS_Store
+sample_project/output/*.mp4
+sample_project/client_secrets.json
+sample_project/awfe_campaigns.csv

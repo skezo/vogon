@@ -65,7 +65,11 @@ def generate_videos(config_file, youtube_upload, preview_line, flags):
     else:
         lines = enumerate(data)
     for i, row in lines:
-        video = generate_video(config, row, (i + 1))
+        if flags.skip_render:
+            row['$id'] = str((i + 1))
+            video = output_video = replace_vars(config['output_video'], row)
+        else: 
+            video = generate_video(config, row, (i + 1))
         if youtube_upload:
             title = replace_vars(config['video_title'], row)
             description = replace_vars(config['video_description'], row)
@@ -344,6 +348,9 @@ def main():
     parser.add_argument("--preview_line",
             help="Generate only one video, for the given CSV line number",
             type=int)
+    parser.add_argument("--skip_render",
+            help="Skips generating videos, use when videos are already generated",
+            action="store_true")
     args = parser.parse_args()
     generate_videos(args.config_file, args.youtube_upload, args.preview_line, args)
 

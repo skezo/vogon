@@ -49,8 +49,8 @@ RETRIABLE_STATUS_CODES = [500, 502, 503, 504]
 # The CLIENT_SECRETS_FILE variable specifies the name of a file that contains
 # the OAuth 2.0 information for this application, including its client_id and
 # client_secret. You can acquire an OAuth 2.0 client ID and client secret from
-# the Google Developers Console at
-# https://console.developers.google.com/.
+# the {{ Google Cloud Console }} at
+# {{ https://cloud.google.com/console }}.
 # Please ensure that you have enabled the YouTube Data API for your project.
 # For more information about using OAuth2 to access the YouTube Data API, see:
 #   https://developers.google.com/youtube/v3/guides/authentication
@@ -74,8 +74,8 @@ found at:
 
    %s
 
-with information from the Developers Console
-https://console.developers.google.com/
+with information from the {{ Cloud Console }}
+{{ https://cloud.google.com/console }}
 
 For more information about the client_secrets.json file format, please visit:
 https://developers.google.com/api-client-library/python/guide/aaa_client_secrets
